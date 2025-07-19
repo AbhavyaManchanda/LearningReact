@@ -11,7 +11,7 @@ function Home() {
         { id: 1, title: "John wick", release_date: "2020" },
         { id: 2, title: "Terminator", release_date: "2021" },
         { id: 3, title: "Mathew", release_date: "2013" },
-        { id: 4, title: "insantiates", release_date: "2009" }
+        { id: 4, title: "matts", release_date: "2009" }
     ];
     // This is a hardcoded list of movies, in a real application this data would come from an API
 
@@ -45,10 +45,18 @@ function Home() {
 
                 <div className="movie-grid">
                     {movies.map(mov =>
-                    (<MovieCard movie={mov} key={mov.id} />
-                    ))}
+                    ( 
+                        <MovieCard movie={mov} key={mov.id} />
+                    )
+                        // Here we map over the movies array and render a MovieCard for each movie
+                        // The key prop is important for React to identify which items have changed, are added, or removed
+                        // We can also filter the movies based on the search query
+                        // mov.title.toLowerCase().startsWith(searchQuery)    &&
+                        // //
+                        // This condition checks if the movie title starts with the search query
+                    )}
                 </div>
-                
+
             </div>
         </>
     )
