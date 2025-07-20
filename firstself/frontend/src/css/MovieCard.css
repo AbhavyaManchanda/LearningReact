@@ -68,6 +68,7 @@
 }
 
 .favorite-btn.active {
+    background-color: #ff4757;
     color: #ff4757;
 }
 
@@ -92,6 +93,7 @@
 .movie-info h3 {
     font-size: 1rem;
     margin: 0;
+    color:white;
 }
 
 .movie-info p {

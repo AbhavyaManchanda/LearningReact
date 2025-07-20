@@ -1,17 +1,19 @@
-import './App.css'
+import './css/App.css'
 import MovieCard from './components/MovieCard'
 import Home from './pages/Home'
 import { Routes, Route } from "react-router-dom"
-import Favs from './pages/Favs';
+import Favorites from './pages/Favorites';
 import NavBar from './components/NavBar';
+import { MovieProvider } from './contexts/MovieContext';
 
 function App() {
 
   return (
-    <div>
+    <MovieProvider>
+
       <NavBar />
 
-      
+
       {/* The NavBar component is imported and used here to display the navigation links */}
       {/* The Routes component is used to define the different routes in the application */}
       {/* Each Route component defines a path and the component to render for that path */}
@@ -20,13 +22,13 @@ function App() {
       <main className="main-content">
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/favorites" element={<Favs />} />
+        <Route path="/favorites" element={<Favorites />} />
         
         
       </Routes>
       
       </main>
-    </div>
+    </MovieProvider>
   )
 }
 
