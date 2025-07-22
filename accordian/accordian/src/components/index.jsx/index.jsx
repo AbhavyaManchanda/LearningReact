@@ -13,13 +13,23 @@ export default function Accordian() {
 
   function handleMultiSelection(getCurrentId) {
     let cpyMutiple = [...multiple];
+    //create a copy of multiple array
+    //and then check if the current id is present in the array or not
     const findIndexOfCurrentId = cpyMutiple.indexOf(getCurrentId);
+    //find the index of current id in the array
+    //if it is present then it will return the index of that id
+    //if it is not present then it will return -1
 
     console.log(findIndexOfCurrentId);
+
     if (findIndexOfCurrentId === -1) cpyMutiple.push(getCurrentId);
     else cpyMutiple.splice(findIndexOfCurrentId, 1);
+    //agr current id is not present in the array then push it
+    //else remove it from the array
 
     setMultiple(cpyMutiple);
+    //set the multiple state to the updated array
+    if (cpyMutiple.length === 0) setSelected(null);
   }
 
     console.log(selected, multiple);
