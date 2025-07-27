@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import "./styles.css";
+    import { useEffect, useState } from "react";
+    import "./styles.css";
 
-export default function LoadMoreData() {
+    export default function LoadMoreData() {
     const [loading, setLoading] = useState(false);
     const [products, setProducts] = useState([]);
     const [count, setCount] = useState(0);
@@ -11,8 +11,7 @@ export default function LoadMoreData() {
         try {
         setLoading(true);
         const response = await fetch(
-            `https://dummyjson.com/products?limit=20&skip=${
-            count === 0 ? 0 : count * 20
+            `https://dummyjson.com/products?limit=20&skip=${count === 0 ? 0 : count * 20
             }`
         );
 
@@ -62,4 +61,4 @@ export default function LoadMoreData() {
         </div>
         </div>
     );
-}
+    }
