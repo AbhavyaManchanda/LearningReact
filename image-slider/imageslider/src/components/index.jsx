@@ -53,14 +53,14 @@ export default function ImageSlider({ url, limit = 5, page = 1 }) {
         <BsArrowLeftCircleFill onClick={handlePrevious}
             className="arrow arrow-left" />
             
-        {images && images.length
-            ? images.map((imageItem, index) => (
-                <img
-                key={imageItem.id}
+        {images && images.length ? images.map((imageItem, index) => (
+                <img key={imageItem.id}
                 alt={imageItem.download_url}
                 src={imageItem.download_url}
                 className={
                     currentSlide === index //currentSlide is the index of the image that is being displayed.we got it through useState hook.
+                        //index is the index of the image in the images array.we got it through map function.
+                        // if currentSlide is equal to index then it means that this is the current image that is being displayed.
                     ? "current-image"
                     : "current-image hide-current-image"
                 }
