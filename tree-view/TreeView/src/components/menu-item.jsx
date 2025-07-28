@@ -6,9 +6,8 @@ export default function MenuItem({ item }) {
     const [displayCurrentChildren, setDisplayCurrentChildren] = useState({});
 
     function handleToggleChildren(getCurrentlabel) {
-        setDisplayCurrentChildren({
-        ...displayCurrentChildren,
-        [getCurrentlabel]: !displayCurrentChildren[getCurrentlabel],
+        setDisplayCurrentChildren({...displayCurrentChildren,
+            [getCurrentlabel]: !displayCurrentChildren[getCurrentlabel],
         });
     }
 
@@ -33,15 +32,16 @@ export default function MenuItem({ item }) {
             ) : null}
               {/* this is the menu item with children */}
     </div>
+            {/* this is giving ki agr + hai to aage aur - hai to peeche and vo handle toggle children me likha hai  */}
 
     {item &&
     item.children &&
     item.children.length > 0 && displayCurrentChildren[item.label]
         ? ( <MenuList list={item.children} /> )
-                : null}
+        : null}
             
         
-        </li>
+    </li>
         //in this we are checking if the item has children and if the children are displayed . and then we are rendering the menu list component with the children of the current item depending upon the state of the children of the current item.
         
     );
