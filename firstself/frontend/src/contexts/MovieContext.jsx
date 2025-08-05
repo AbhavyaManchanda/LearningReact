@@ -2,7 +2,7 @@ import { createContext, useState, useContext, useEffect } from "react";
 
 const MovieContext = createContext();
 
- const useMovieContext = () => useContext(MovieContext);
+export const useMovieContext = () => useContext(MovieContext);
 
 export const MovieProvider = ({ children }) => {
     //children is the component that will use this context
@@ -42,4 +42,4 @@ export const MovieProvider = ({ children }) => {
         <MovieContext.Provider value={value}>{children}</MovieContext.Provider>
     );
 };
-export default { useMovieContext};
+//  export default { useMovieContext};
