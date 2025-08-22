@@ -17,13 +17,14 @@
     cursor: pointer;
     border: none;
     color: #fff;
-    background: #4e016a;
+    background: #c5abcf;
 }
 
 .tab-item.active {
     border-color: #000;
-    background: #a1d600;
+    background: #c5abcf;
     color: #fff;
+    border:#f9f6f6 dotted 5px;
 }
 
 .content {
