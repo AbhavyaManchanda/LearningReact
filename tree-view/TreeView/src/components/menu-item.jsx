@@ -26,7 +26,8 @@ export default function MenuItem({ item }) {
             <FaMinus color="#fff" size={25} />
             ) : (
             <FaPlus color="#fff" size={25} />
-            )}
+                        )}
+                        
             </span>
                 
             ) : null}

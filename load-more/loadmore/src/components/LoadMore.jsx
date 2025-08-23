@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "./styles.css";
 
+
 export default function LoadMoreData() {
   const [loading, setLoading] = useState(false);
   const [products, setProducts] = useState([]);
@@ -10,6 +11,7 @@ export default function LoadMoreData() {
   async function fetchProducts() {
     try {
       setLoading(true);
+
       const response = await fetch(
         `https://dummyjson.com/products?limit=20&skip=${
           count === 0 ? 0 : count * 20
@@ -37,13 +39,17 @@ export default function LoadMoreData() {
     }
   }
 
+
   useEffect(() => {
     fetchProducts();
   }, [count]);
 
+
+
   useEffect(() => {
     if (products && products.length === 100) setDisableButton(true);
   }, [products]);
+
 
   if (loading) {
     return <div>Loading data ! Please wait.</div>;
@@ -52,6 +58,12 @@ export default function LoadMoreData() {
   return (
     <div className="load-more-container">
       <div className="product-container">
+
+        {/* iska mtlb hai ki agar products hai aur agr uski koi length hai to uske hr element ko ek ek karke product nam ki div de do key dedo usi ki id ..image dedo uski aur title dedo*/}
+        {/* products array me key value pairs hai--- jese ki [{id:1,title:tilt}] .. ab isi me se data nikal ke
+        render kar re hai... */}
+        {/* Key sirf React ke liye hoti hai, user ko visible nahi hoti. */}
+
         {products && products.length
           ? products.map((item) => (
               <div className="product" key={item.id}>
@@ -61,6 +73,7 @@ export default function LoadMoreData() {
             ))
           : null}
       </div>
+
       <div className="button-container">
         <button disabled={disableButton} onClick={() => setCount(count + 1)}>
           Load More Products
